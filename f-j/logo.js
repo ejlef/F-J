@@ -4,7 +4,7 @@ export default function handler(req, res) {
   res.setHeader('Content-Type', 'image/svg+xml');
   res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
 
-  // SVG source code combining 'f' and 'j' with a modern blue gradient
+  // SVG source code with the corrected xmlns URL
   const svgString = `<svg xmlns="http://w3.org" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
     <linearGradient id="fjGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,7 +13,7 @@ export default function handler(req, res) {
     </linearGradient>
   </defs>
   
-  <!-- Background (Optional: Remove if you want a transparent background) -->
+  <!-- Background -->
   <rect width="100%" height="100%" fill="#ffffff" rx="40" />
 
   <!-- Monogram Logo Mark -->
