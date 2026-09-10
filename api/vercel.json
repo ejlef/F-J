@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/logo",
-      "destination": "/api/logo"
+      "source": "/",
+      "destination": "/logo.js"
+    },
+    {
+      "source": "/api/logo",
+      "destination": "/logo.js"
     }
   ]
 }
