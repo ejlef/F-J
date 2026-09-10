@@ -1,7 +1,10 @@
 {
-  "functions": {
-    "api/*.js": {
-      "runtime": "@vercel/node"
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/logo",
+      "destination": "/api/logo"
     }
-  }
+  ]
 }
