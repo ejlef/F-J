@@ -1,10 +1,10 @@
 // logo.js
 export default function handler(req, res) {
-  // 1. Force the browser to read this file as a real SVG image graphic
-  res.setHeader('Content-Type', 'image/svg+xml; charset=utf-8');
+  // 1. Tell the browser explicitly that this is a renderable image graphic
+  res.setHeader('Content-Type', 'image/svg+xml');
   res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
 
-  // 2. The valid SVG structure
+  // 2. SVG source code with the CORRECT namespace URL
   const svgString = `<svg xmlns="http://w3.org" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
     <linearGradient id="fjGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,8 +13,10 @@ export default function handler(req, res) {
     </linearGradient>
   </defs>
   
+  <!-- White rounded background card -->
   <rect width="100%" height="100%" fill="#ffffff" rx="40" />
 
+  <!-- Monogram Logo Mark (Intertwined F and J) -->
   <g transform="translate(150, 100)">
     <path d="M 50,40 
              C 50,0 110,0 110,40 
@@ -41,6 +43,6 @@ export default function handler(req, res) {
   </g>
 </svg>`;
 
-  // 3. Send the data out directly as a completed buffer/string stream
+  // 3. Send the verified SVG directly to the browser view
   res.status(200).send(svgString);
 }
