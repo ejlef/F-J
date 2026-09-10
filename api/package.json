@@ -1,4 +1,9 @@
 {
-  "name": "F-J",
-  "private": true
+  "name": "f-j",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vercel build"
+  },
+  "dependencies": {}
 }
