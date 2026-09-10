@@ -1,9 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/logo.svg", "use": "@vercel/node" }
+  "rewrites": [
+    { "source": "/", "destination": "/logo.svg" }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "api/logo.svg" }
+  "headers": [
+    {
+      "source": "/logo.svg",
+      "headers": [
+        { "key": "Content-Type", "value": "image/svg+xml" },
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate" }
+      ]
+    }
   ]
 }
