@@ -1,15 +1,3 @@
 {
-  "version": 2,
-  "rewrites": [
-    { "source": "/", "destination": "/logo.svg" }
-  ],
-  "headers": [
-    {
-      "source": "/logo.svg",
-      "headers": [
-        { "key": "Content-Type", "value": "image/svg+xml" },
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate" }
-      ]
-    }
-  ]
+  "version": 2
 }
